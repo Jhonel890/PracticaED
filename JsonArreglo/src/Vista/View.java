@@ -173,6 +173,8 @@ public class View extends javax.swing.JFrame {
 private int contador= 0 ;
 
     private void btnIngresarBolsa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarBolsa1ActionPerformed
+        
+        try {
         obj.Ingresar();
         txtFecha.setText("");
         txtSueldo.setText("");
@@ -181,6 +183,12 @@ private int contador= 0 ;
         if (contador == Contar.arreglo.length) {
             btnVer.setVisible(true);
         }
+        JOptionPane.showMessageDialog(null,"Ingresado correctamente");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"ERROR");
+            
+        }
+
         
         
         
@@ -234,12 +242,21 @@ private int contador= 0 ;
              
     }}
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-       escribir();
+        try {
+             escribir();
        
-        int a = modelo.getRowCount()-1;
-        for (int i = a; i >= 0; i--) {
-           modelo.removeRow(i); 
+            int a = modelo.getRowCount()-1;
+            for (int i = a; i >= 0; i--) {
+            modelo.removeRow(i);
+            }
+            JOptionPane.showMessageDialog(null,"Guardado correctamente");
+        } catch (Exception e) {
+                        JOptionPane.showMessageDialog(null,"Error");
+
         }
+        
+        
+        
 
        
     }//GEN-LAST:event_btnGuardarActionPerformed
