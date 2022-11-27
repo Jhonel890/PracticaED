@@ -17,7 +17,7 @@ public class Operaciones implements Serializable {
     }
 
     public static void iniciarDatos() {
-        Operaciones tmpGeneral = SerializarObjeto.deserializarObjeto("EstadoProductos.dat", Operaciones.class);
+        Operaciones tmpGeneral = SerializarObjeto.deserializarObjeto("Personas.json", Operaciones.class);
         if (tmpGeneral == null) {
             System.out.println("Creando los Datos Iniciales");
             Operaciones.general = new Operaciones();
@@ -33,7 +33,7 @@ public class Operaciones implements Serializable {
 
 
     public void guardar() {
-        SerializarObjeto.serializarObjeto("EstadoProductos.dat", this);
+        SerializarObjeto.serializarObjeto("Personas.json", this);
     }
 
     public List<Persona> getPersonas() {
